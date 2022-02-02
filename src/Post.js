@@ -28,7 +28,6 @@ function Post(props) {
     age: "",
     location: "",
     hobby: "",
-    aboutme: "",
     photo: "",
   });
 
@@ -39,7 +38,6 @@ function Post(props) {
       state.age,
       state.location,
       state.hobby,
-      state.aboutme,
       state.photo
     );
     toastr.success("Your profile added successfully");
@@ -48,7 +46,6 @@ function Post(props) {
       age: "",
       location: "",
       hobby: "",
-      aboutme: "",
       photo: "",
     });
   };
@@ -96,7 +93,7 @@ function Post(props) {
           />
         </Form.Group>
 
-        <Form.Group controlId="userLocation">
+        <Form.Group controlId="userDOB">
           <Form.Label> Date of Birth</Form.Label>
           <Form.Control
             name="dob"
@@ -116,18 +113,8 @@ function Post(props) {
           />
         </Form.Group>
 
-        <Form.Group controlId="userAbout">
-          <Form.Label> About You</Form.Label>
-          <Form.Control
-            name="aboutme"
-            type="text"
-            value={state.aboutme}
-            onChange={(e) => handleChange(e)}
-          />
-        </Form.Group>
-
         <Form.Group controlId="userPhoto">
-          <Form.Label> Photo</Form.Label>
+          <Form.Label> Photo (URL)</Form.Label>
           <Form.Control
             name="photo"
             type="text"

@@ -13,8 +13,8 @@ import Container from "react-bootstrap/Container";
 function App() {
   const [profile, changeProfile] = useState([]);
 
-  const updateList = (username, age, location, hobby, aboutme, photo) => {
-    const listItem = { username, age, location, hobby, aboutme, photo };
+  const updateList = (username, age, location, hobby, photo) => {
+    const listItem = { username, age, location, hobby, photo };
     changeProfile(
       (state) => [...state, listItem],
       localStorage.setItem("list", JSON.stringify([...profile, listItem]))
@@ -62,8 +62,8 @@ function App() {
             path="/post"
             element={
               <Post
-              addProfile={(username, age, location, hobby, aboutme, photo) =>
-                  updateList(username, age, location, hobby, aboutme, photo)
+              addProfile={(username, age, location, hobby, photo) =>
+                  updateList(username, age, location, hobby, photo)
                 }
               />
             }
