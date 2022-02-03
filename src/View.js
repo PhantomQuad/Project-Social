@@ -20,11 +20,11 @@ function View(props){
               <Card.Text>Location:{current.location}</Card.Text>
               <Card.Text>Hobbies:{current.hobby}</Card.Text>
             <Card.Img
-              href="#home"
+              onClick={() => props.incrementCount(current.username)}
               variant="bottom"
               className="like"
               as={Image}
-              src="https://cdn4.iconfinder.com/data/icons/multimedia-75/512/multimedia-11-512.png"
+              src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/like-512.png"
               fluid={true}
               alt="Like button"
             />

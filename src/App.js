@@ -22,11 +22,9 @@ function App() {
   };
 
   const incrementCount = (username) => {
-    console.log(username);
     const newProfile = profile.map((post) =>
       post.username === username ? { ...post, likes: post.likes + 1 } : post
     );
-    console.log(newProfile);
     changeProfile(newProfile);
   };
 
