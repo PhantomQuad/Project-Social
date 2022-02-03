@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
-import Card from 'react-bootstrap/Card';
-import Image from 'react-bootstrap/Image'
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Card from "react-bootstrap/Card";
+import Image from "react-bootstrap/Image";
+import Counter from "./Counter";
+import Button from 'react-bootstrap/Button';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function View(props){
+
     const buildCard = () => {
         return props.profile.map((current) => (
            <> 
@@ -16,7 +19,8 @@ function View(props){
               <Card.Text>Age: {current.age}</Card.Text>
               <Card.Text>Location:{current.location}</Card.Text>
               <Card.Text>Hobbies:{current.hobby}</Card.Text>
-              <Card.Img variant="bottom" className="like" as={Image} src="https://cdn4.iconfinder.com/data/icons/multimedia-75/512/multimedia-11-512.png" fluid={true} alt="Profile image" />
+              <Button onClick={() => props.incrementCount(current.username)}>Increase</Button>
+              <Card.Text>Like: {current.likes}</Card.Text>
               </Card.Body>
               <br />
               </>
@@ -24,9 +28,13 @@ function View(props){
       };
 
     return(
+      <>
+      
         <Card style={{ width: '22rem' }}>
         {buildCard()}
+        
         </Card>
+        </>
       )
 }
 export default View;

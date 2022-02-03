@@ -14,11 +14,20 @@ function App() {
   const [profile, changeProfile] = useState([]);
 
   const updateList = (username, age, location, hobby, photo) => {
-    const listItem = { username, age, location, hobby, photo };
+    const listItem = { username, age, location, hobby, photo, likes: 0 };
     changeProfile(
       (state) => [...state, listItem],
       localStorage.setItem("list", JSON.stringify([...profile, listItem]))
     );
+  };
+
+  const incrementCount = (username) => {
+    console.log(username);
+    const newProfile = profile.map((post) =>
+      post.username === username ? { ...post, likes: post.likes + 1 } : post
+    );
+    console.log(newProfile);
+    changeProfile(newProfile);
   };
 
   useEffect(() => {
@@ -62,14 +71,24 @@ function App() {
             path="/post"
             element={
               <Post
-              addProfile={(username, age, location, hobby, photo) =>
+                addProfile={(username, age, location, hobby, photo) =>
                   updateList(username, age, location, hobby, photo)
                 }
               />
             }
           />
-          <Route path="/view" element={<View profile={profile} />} />
-          <Route index element={<View profile={profile} />} />
+          <Route
+            path="/view"
+            element={
+              <View profile={profile} incrementCount={(username) => incrementCount(username)} />
+            }
+          />
+          <Route
+            index
+            element={
+              <View profile={profile} incrementCount={(username) => incrementCount(username)} />
+            }
+          />
         </Routes>
       </Container>
     </BrowserRouter>
