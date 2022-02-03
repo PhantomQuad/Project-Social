@@ -17,8 +17,8 @@ function View(props){
             <Card.Img variant="top" as={Image} src={current.photo} fluid={true} alt="Profile image" />
               <Card.Title>{current.username}</Card.Title>
               <Card.Text>Age: {current.age}</Card.Text>
-              <Card.Text>Location:{current.location}</Card.Text>
-              <Card.Text>Hobbies:{current.hobby}</Card.Text>
+              <Card.Text>Location: {current.location}</Card.Text>
+              <Card.Text>Hobbies: {current.hobby}</Card.Text>
             <Card.Img
               onClick={() => props.incrementCount(current.username)}
               variant="bottom"
