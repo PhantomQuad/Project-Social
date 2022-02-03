@@ -19,7 +19,16 @@ function View(props){
               <Card.Text>Age: {current.age}</Card.Text>
               <Card.Text>Location:{current.location}</Card.Text>
               <Card.Text>Hobbies:{current.hobby}</Card.Text>
-              <Button onClick={() => props.incrementCount(current.username)}>Increase</Button>
+            <Card.Img
+              href="#home"
+              variant="bottom"
+              className="like"
+              as={Image}
+              src="https://cdn4.iconfinder.com/data/icons/multimedia-75/512/multimedia-11-512.png"
+              fluid={true}
+              alt="Like button"
+            />
+              {/* <Button onClick={() => props.incrementCount(current.username)}>Increase</Button> */}
               <Card.Text>Like: {current.likes}</Card.Text>
               </Card.Body>
               <br />
