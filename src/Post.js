@@ -16,7 +16,7 @@ toastr.options = {
   positionClass: "toast-top-full-width",
   preventDuplicates: true,
   progressBar: true,
-  showDuration: "3000",
+  showDuration: "1000",
   showEasing: "swing",
   showMethod: "fadeIn",
   timeOut: "5000",

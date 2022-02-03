@@ -25,7 +25,10 @@ function App() {
     const newProfile = profile.map((post) =>
       post.username === username ? { ...post, likes: post.likes + 1 } : post
     );
+    localStorage.setItem("list", JSON.stringify([...newProfile]))
     changeProfile(newProfile);
+
+      
   };
 
   useEffect(() => {
@@ -46,7 +49,7 @@ function App() {
                 height="30"
                 className="d-inline-block align-top"
               />{" "}
-              The Dating Site
+              Developer Academy Dating Site
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">

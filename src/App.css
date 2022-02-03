@@ -3,8 +3,6 @@
     width: 50%;
     padding: 20px;
     margin-top: 20px;
-    border: 1px solid black;
-    box-sizing: border-box;
   }
 
   input {
@@ -17,7 +15,7 @@
     height: 50px;
   }
 
-.like{
-  width: 30px;
-  height: 30px;
-}
+  .like{
+    width: 30px;
+    height: 30px;
+  }

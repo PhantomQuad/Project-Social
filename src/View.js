@@ -5,7 +5,7 @@ import Image from "react-bootstrap/Image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-function View(props){
+function View2(props){
 
     const buildCard = () => {
         return props.profile.map((current) => (
@@ -25,7 +25,6 @@ function View(props){
               fluid={true}
               alt="Like button"
             />
-              {/* <Button onClick={() => props.incrementCount(current.username)}>Increase</Button> */}
               <Card.Text>Like: {current.likes}</Card.Text>
               </Card.Body>
               <br />
@@ -43,4 +42,4 @@ function View(props){
         </>
       )
 }
-export default View;
+export default View2;
