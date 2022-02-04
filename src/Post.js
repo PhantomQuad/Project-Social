@@ -52,11 +52,7 @@ function Post(props) {
 
   const handleChange = (event) => {
     const newState = { ...state };
-    if (event.target.name === "completed") {
-      newState[event.target.name] = !state.completed;
-    } else {
       newState[event.target.name] = event.target.value;
-    }
     changeState(newState);
   };
 

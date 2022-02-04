@@ -5,7 +5,7 @@ import Image from "react-bootstrap/Image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-function View2(props){
+function View(props){
 
     const buildCard = () => {
         return props.profile.map((current) => (
@@ -42,4 +42,4 @@ function View2(props){
         </>
       )
 }
-export default View2;
+export default View;
