@@ -25,10 +25,8 @@ function App() {
     const newProfile = profile.map((post) =>
       post.username === username ? { ...post, likes: post.likes + 1 } : post
     );
-    localStorage.setItem("list", JSON.stringify([...newProfile]))
+    localStorage.setItem("list", JSON.stringify([...newProfile]));
     changeProfile(newProfile);
-
-      
   };
 
   useEffect(() => {
@@ -81,13 +79,19 @@ function App() {
           <Route
             path="/view"
             element={
-              <View profile={profile} incrementCount={(username) => incrementCount(username)} />
+              <View
+                profile={profile}
+                incrementCount={(username) => incrementCount(username)}
+              />
             }
           />
           <Route
             index
             element={
-              <View profile={profile} incrementCount={(username) => incrementCount(username)} />
+              <View
+                profile={profile}
+                incrementCount={(username) => incrementCount(username)}
+              />
             }
           />
         </Routes>
